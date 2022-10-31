@@ -1,9 +1,17 @@
+html {
+  --font-size: 6vw;
+  --line-height: 0.8em;
+}
+
 html,
-body {
+body,
+body > div {
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 a {
@@ -15,10 +23,15 @@ a {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;

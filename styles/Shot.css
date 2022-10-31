@@ -1,0 +1,66 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  --img-template-width: 930;
+  --img-template-height: 523;
+  --padding: 0.6em 0.75em;
+}
+
+.imageTemplate {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.haddockText {
+  --haddock-text-vertical-offset: calc(50% - var(--font-size) * 4.7);
+  position: absolute;
+  top: var(--haddock-text-vertical-offset);
+  left: 0;
+  right: 0;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding: var(--padding);
+}
+
+.tintinText {
+  --tintin-text-vertical-offset: calc(50% - var(--font-size) * 1.4);
+  --tintin-text-left-offset: calc(50% + var(--font-size) * 0.3);
+  --tintin-text-right-offset: 0;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  top: var(--tintin-text-vertical-offset);
+  left: var(--tintin-text-left-offset);
+  right: var(--tintin-text-right-offset);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding: var(--padding);
+}
+
+@media (min-aspect-ratio: 930/523) {
+  .container {
+    --ultrawide-font-size: 10.5vh;
+  }
+
+  .haddockText {
+    --haddock-text-horizontal-offset: calc(50% - 50vh * (var(--img-template-width) / var(--img-template-height)));
+    position: absolute;
+    top: 0;
+    left: var(--haddock-text-horizontal-offset);
+    right: var(--haddock-text-horizontal-offset);
+    font-size: var(--ultrawide-font-size);
+  }
+
+  .tintinText {
+    --tintin-text-left-offset: calc(50% + 3vh);
+    --tintin-text-right-offset: calc(var(--tintin-text-left-offset) - 90vh);
+    --tintin-text-vertical-offset: 35%;
+    position: absolute;
+    top: var(--tintin-text-vertical-offset);
+    left: var(--tintin-text-left-offset);
+    right: var(--tintin-text-right-offset);
+    font-size: var(--ultrawide-font-size);
+  }
+}
